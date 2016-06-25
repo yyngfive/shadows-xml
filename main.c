@@ -2,12 +2,12 @@
 
 int main(int argc, char const *argv[])
 {
-    char data[1024];
+    char *data[1024];
     FILE *fp;
     fp = fopen("test.xml","r");
     if (fp != NULL)
     {
-        data = format_xml(fp);
+        *data = format_xml(fp);
         printf("%s\n",data);
         fclose(fp);
     }
