@@ -8,6 +8,7 @@ int main(int argc, char const *argv[])
     {
         format_xml(fp);
         fclose(fp);
+        return 0;
     }
     printf("%s\n","Can not open the file!\n" );
     return 0;
@@ -46,11 +47,11 @@ char *format_xml(FILE *xml)
         printf("%s\n","ERROR!" );
         return NULL;
     }
-    while (feof(xml) != 0 )
+    while (! feof(xml) )
     {
         formated[i] = fgetc(xml);
     }
-    for(i;i<file_leng;i++)
+    for(i;i < file_leng;i++)
     {
         printf("%c",formated[i]);
     }
