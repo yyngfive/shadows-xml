@@ -38,6 +38,7 @@ char *format_xml(FILE *xml)
     char *formated = NULL;
 
     file_leng = get_length(xml);
+    printf("%d\n",file_leng );
     formated = (char *)malloc(file_leng+1);
     if(formated == NULL)
     {
