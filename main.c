@@ -53,7 +53,8 @@ char *format_xml(FILE *xml)
     }
     for(i;i < file_leng;i++)
     {
-        printf("%c",formated[i]);
+        printf("%s",formated[i]);
     }
+    printf("\n" );
     return formated;
 }
