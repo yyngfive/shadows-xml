@@ -2,13 +2,11 @@
 
 int main(int argc, char const *argv[])
 {
-    char *data[1024];
     FILE *fp;
     fp = fopen("test.xml","r");
     if (fp != NULL)
     {
-        data = format_xml(fp);
-        printf("%s\n",*data);
+        format_xml(fp);
         fclose(fp);
     }
     printf("%s\n","Can not open the file!\n" );
@@ -44,6 +42,10 @@ char *format_xml(FILE *xml)
     while (feof(xml) != 0 )
     {
         formated[i] = fgetc(xml);
+    }
+    for(i;i<file_leng;i++)
+    {
+        printf("%c",formated[i]);
     }
     return formated;
 }
