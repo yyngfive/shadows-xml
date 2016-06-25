@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data>
+    <note1>
+      hello xml!
+    </note1>
+    <note2>
+      <child0>what</child0>
+      <child1>is</child1>
+      <child2>your</child2>
+      <child3>name</child3>
+      <child4>?</child4>
+    </note2>
+  </data>
+</root>
