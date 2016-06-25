@@ -39,6 +39,11 @@ char *format_xml(FILE *xml)
 
     file_leng = get_length(xml);
     formated = (char *)malloc(file_leng+1);
+    if(formated == NULL)
+    {
+        printf("%s\n","ERROR!" );
+        return NULL;
+    }
     while (feof(xml) != 0 )
     {
         formated[i] = fgetc(xml);
