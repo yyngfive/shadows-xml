@@ -21,6 +21,7 @@ int get_length(FILE *file)
     {
             fgetc(file);
     }
+    fseek(file,0,0);
     return i;
 }
 
