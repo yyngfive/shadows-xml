@@ -5,7 +5,7 @@ int get_length(FILE *file)
     int i,length;
     i = 0;
     length = 0;
-    for ( i ; feof(file) != 0 ; i++)
+    for ( i ; feof(file) == 0 ; i++)
     {
             fgetc(file);
     }
