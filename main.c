@@ -4,7 +4,7 @@ int main(int argc, char const *argv[])
 {
     char data[1024];
     FILE *fp;
-    fp = fopen("test1.x","r");
+    fp = fopen("test.xml","r");
     if (file != NULL)
     {
         data = format_xml(file);
@@ -39,11 +39,11 @@ char *format_xml(FILE *xml)
     int i = 0;
     char *formated = NULL;
 
-    file_leng = get_length(file);
+    file_leng = get_length(xml);
     formated = (char *)malloc(file_leng+1);
-    while (feof(file) != 0 )
+    while (feof(xml) != 0 )
     {
-        formated[i] = fgetc(file);
+        formated[i] = fgetc(xml);
     }
     return formated;
 }
