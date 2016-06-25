@@ -1,6 +1,6 @@
 # text file
 cc = gcc
-object = mian.o
+object = main.o
 main : $(object)
 	$(cc) -o main $(object)
 main.o : main.c main.h
