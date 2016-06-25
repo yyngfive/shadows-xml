@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
     char data[1024];
     FILE *fp;
     fp = fopen("test.xml","r");
-    if (file != NULL)
+    if (fp != NULL)
     {
         data = format_xml(file);
         printf("%s\n",data);
