@@ -74,7 +74,7 @@ char *no_format(FILE *xml)
                 label_leng = get_label_length(xml);
                 for(label_leng;label_leng > 0;label_leng--)
                 {
-                    c = fgetc(fp);
+                    c = fgetc(xml);
                     *changed = c;
                     changed++;
                 }
