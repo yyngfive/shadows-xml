@@ -52,10 +52,7 @@ char *no_format(FILE *xml)
     {
          *changed++ = fgetc(xml);
     }
-    for(i;i < file_leng;i++)
-    {
-        printf("%s",head);
-    }
+    printf("%s\n",head );
     printf("\n" );
     free(head);
     return NULL;
