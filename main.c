@@ -54,9 +54,9 @@ char *no_format(FILE *xml)
     }
     for(i;i < file_leng;i++)
     {
-        printf("%c",*changed++);
+        printf("%s",head);
     }
     printf("\n" );
-    free(changed);
+    free(head);
     return NULL;
 }
