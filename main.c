@@ -65,7 +65,7 @@ char *no_format(FILE *xml)
     {
          *changed++ = fgetc(xml);
     }
-    printf("%s\n",changed);
+    printf("%s\n",head);
 
     /*while (! feof(xml))
     {
@@ -82,6 +82,6 @@ char *no_format(FILE *xml)
                 break;
             }
     }*/
-    free(changed);
+    free(head);
     return NULL;
 }
