@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
         fclose(fp);
         return 0;
     }
-    printf("%s\n","Can not open the file!\n" );
+    printf("%s\n","不能打开文件\n" );
     return 0;
 }
 
@@ -26,7 +26,7 @@ int get_length(FILE *file)
     return i;
 }
 
-char *format_xml(FILE *xml)
+char *no_format(FILE *xml)
 {
     char c;
     const char space = ' ';
@@ -37,24 +37,26 @@ char *format_xml(FILE *xml)
 
     int label_leng = 0,file_leng = 0;
     int i = 0;
-    char *formated = NULL;
+    char *changed = NULL;
+    char *head;
 
     file_leng = get_length(xml);
-    printf("%d\n",file_leng );
-    formated = (char *)malloc(file_leng+1);
-    if(formated == NULL)
+    changed = (char *)malloc(file_leng);
+    if(changed  == NULL)
     {
-        printf("%s\n","ERROR!" );
+        printf("%s\n","内存分配错误！");
         return NULL;
     }
+    head = changed ;
     while (! feof(xml) )
     {
-        formated[i] = fgetc(xml);
+         *changed++ = fgetc(xml);
     }
     for(i;i < file_leng;i++)
     {
-        printf("%c",formated[i]);
+        printf("%c",*changed++);
     }
     printf("\n" );
-    return formated;
+    free(changed);
+    return NULL;
 }

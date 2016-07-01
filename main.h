@@ -7,4 +7,4 @@
 *返回：文件长度
 */
 int get_length(FILE *file);
-char *format_xml(FILE *xml);
+char *no_formatl(FILE *xml);
