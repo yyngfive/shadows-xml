@@ -8,3 +8,4 @@
 */
 int get_length(FILE *file);
 char *no_format(FILE *xml);
+int get_label_length(char *chevron);
