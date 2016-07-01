@@ -26,14 +26,15 @@ int get_length(FILE *file)
     return i;
 }
 
-int get_label_length(char *chevron)
+int get_label_length(FILE *file)
 {
     int length;
     const char r_chevron = '>';
+    char c;
     length = 0;
-    for(length;*chevron != r_chevron;length++)
+    for(length;c != r_chevron;length++)
     {
-        chevron++;
+        c = fgetc(file);
     }
     return length;
 }
@@ -68,7 +69,7 @@ char *no_format(FILE *xml)
         switch (c)
         {
             case '<':
-                get_label_length(changed);
+                get_label_length(xml);
                 break;
             case ' ':
                 break;
