@@ -22,7 +22,7 @@ int get_length(FILE *file)
     {
             fgetc(file);
     }
-    fseek(file,0,0);
+    rewind(file);
     return i;
 }
 
@@ -36,6 +36,7 @@ int get_label_length(FILE *file)
     {
         c = fgetc(file);
     }
+    fseek(file,0-length,SEEK_CUR);
     return length;
 }
 
@@ -69,7 +70,14 @@ char *no_format(FILE *xml)
         switch (c)
         {
             case '<':
-                get_label_length(xml);
+                *changed = c;
+                label_leng = get_label_length(xml);
+                for(label_leng;label_leng > 0;label_leng--)
+                {
+                    c = fgetc(fp);
+                    *changed = c;
+                    changed++;
+                }
                 break;
             case ' ':
                 break;
