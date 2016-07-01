@@ -6,7 +6,7 @@ int main(int argc, char const *argv[])
     fp = fopen("test.xml","r");
     if (fp != NULL)
     {
-        no_formatl(fp);
+        no_format(fp);
         fclose(fp);
         return 0;
     }
