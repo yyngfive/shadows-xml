@@ -67,8 +67,9 @@ char *no_format(FILE *xml)
         c = fgetc(xml);
         switch (c)
         {
-            //case '<':
-
+            case '<':
+                get_label_length(changed);
+                break;
             case ' ':
                 break;
             case '\r':
