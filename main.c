@@ -69,8 +69,10 @@ char *no_format(FILE *xml)
         c = fgetc(xml);
         switch (c)
         {
+            //对于标签，不去空格。
             case '<':
                 *changed = c;
+                changed++;
                 label_leng = get_label_length(xml);
                 for(label_leng;label_leng > 0;label_leng--)
                 {
