@@ -61,18 +61,18 @@ char *no_format(FILE *xml)
     head = changed ;
 
     //测试
-    while (! feof(xml) )
+    /*while (! feof(xml) )
     {
          *changed++ = fgetc(xml);
     }
     printf("%s\n",head);
-
-    /*while (! feof(xml))
+    */
+    while (! feof(xml))
     {
         c = fgetc(xml);
         switch (c)
         {
-            case l_chevron:
+            //case l_chevron:
 
             case space:
                 break;
@@ -80,8 +80,12 @@ char *no_format(FILE *xml)
                 break;
             case enter2:
                 break;
+            default:
+                *changed = c;
+                changed++;
             }
-    }*/
+    }
+    printf("%s\n",head );
     free(head);
     return NULL;
 }
