@@ -3,7 +3,7 @@
 int main(int argc, char const *argv[])
 {
     FILE *fp;
-    fp = fopen("test.xml","r");
+    fp = fopen(argv[1],"r");
     if (fp != NULL)
     {
         no_format(fp);
